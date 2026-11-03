@@ -13,3 +13,37 @@ Nhóm bạn trẻ, học sinh, sinh viên hoặc đồng nghiệp trẻ từ 3 �
 ## Solutions
 
 TravelMate cung cấp nền tảng điều hành chuyến đi thời gian thực theo chu trình khép kín "All-in-one Contextual Loop". Ứng dụng kết nối liền mạch 3 mô-đun cốt lõi: Lịch trình cộng tác thời gian thực, Màn hình Live Trip Mode dẫn dắt 1-chạm mở trực tiếp Google Maps, và Ghi chi phí ngữ cảnh tự động điền sẵn tên địa điểm/thành viên kèm thuật toán tối ưu công nợ ròng để quyết toán nhanh
+
+## TravelMate API
+
+Đây là backend NestJS cho hai API collections của assignment:
+
+1. **Itinerary Collection**: tạo chuyến đi, thêm thành viên, thêm hoạt động, đổi trạng thái và sắp xếp timeline.
+2. **Expense & Settlement Collection**: ghi chi phí theo activity, xem chi phí, tính số dư ròng và danh sách chuyển khoản tối thiểu.
+
+### Chạy local
+
+```bash
+npm install
+npm run start:dev
+```
+
+Sau đó mở:
+
+- Swagger UI: `http://localhost:3000/docs`
+- OpenAPI JSON: `http://localhost:3000/docs/openapi.json`
+- API base URL: `http://localhost:3000/api`
+
+Swagger UI có thể gọi thử trực tiếp toàn bộ endpoint. Dữ liệu demo được lưu trong memory của process, phù hợp cho presentation/API assessment; khi chạy production cần thay `ItineraryService` và `ExpenseService` bằng database/ORM để dữ liệu không mất sau khi serverless instance khởi động lại.
+
+### Deploy Vercel
+
+Repository đã có [`vercel.json`](./vercel.json) và entrypoint [`api/index.ts`](./api/index.ts), không cần thêm server riêng:
+
+```bash
+npm i -g vercel
+vercel
+vercel --prod
+```
+
+Submission Swagger URL có dạng `https://<project>.vercel.app/docs`.

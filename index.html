@@ -1,0 +1,556 @@
+<!doctype html>
+<html lang="vi" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TravelMate — Điều Hành Du Lịch Nhóm</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: { sans: ["Inter", "sans-serif"] },
+            colors: {
+              primary: {
+                DEFAULT: "#006FFD",
+                hover: "#005AD1",
+                light: "#EAF2FF",
+                soft: "#D0E3FF",
+              },
+              secondary: {
+                DEFAULT: "#0D9488",
+                light: "#D1E8F2",
+              },
+              ink: {
+                DEFAULT: "#1F2024",
+                muted: "#76777E",
+                subtle: "#8F9098",
+              },
+              surface: "#F9F9F9",
+            },
+          },
+        },
+      };
+    </script>
+  </head>
+  <body
+    class="bg-white text-ink antialiased selection:bg-primary-light selection:text-primary"
+  >
+    <!-- NAVBAR -->
+    <header
+      class="sticky top-0 z-50 bg-white/85 backdrop-blur-md border-b border-gray-100"
+    >
+      <div
+        class="max-w-6xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between"
+      >
+        <!-- Logo SVG tối giản -->
+        <a href="#" class="flex items-center gap-2.5 group">
+          <div
+            class="w-9 h-9 rounded-xl bg-primary flex items-center justify-center text-white shadow-sm group-hover:bg-primary-hover transition"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="w-5 h-5"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              stroke-width="2.2"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M12 21s-6-5.686-6-10a6 6 0 1112 0c0 4.314-6 10-6 10z"
+              />
+              <circle cx="12" cy="11" r="2.2" fill="currentColor" />
+            </svg>
+          </div>
+          <span class="text-xl font-extrabold tracking-tight text-ink"
+            >Travel<span class="text-primary">Mate</span></span
+          >
+        </a>
+
+        <!-- Menu điều hướng -->
+        <nav
+          class="hidden md:flex items-center gap-8 text-sm font-medium text-ink-muted"
+        >
+          <a href="#problem" class="hover:text-primary transition">Bài toán</a>
+          <a href="#features" class="hover:text-primary transition"
+            >Tính năng MVP</a
+          >
+          <a href="#gallery" class="hover:text-primary transition">Giao diện</a>
+          <a href="#links" class="hover:text-primary transition"
+            >Tài nguyên dự án</a
+          >
+        </nav>
+
+        <!-- CTA Button -->
+        <a
+          href="https://www.figma.com/design/CZABZnP40F3PHmhCYVFLZY/Figma-Design-TravelMate?node-id=1-199&t=uRCwIO466Zq3vyqT-1"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="inline-flex items-center gap-2 bg-primary hover:bg-primary-hover text-white text-sm font-semibold px-4 py-2.5 rounded-xl transition shadow-sm"
+        >
+          Xem Prototype
+        </a>
+      </div>
+    </header>
+
+    <!-- 1. HERO SECTION -->
+    <section
+      class="relative overflow-hidden bg-gradient-to-b from-primary-light/60 via-white to-white pt-14 pb-20 lg:pt-20 lg:pb-28"
+    >
+      <div
+        class="max-w-6xl mx-auto px-4 sm:px-6 grid lg:grid-cols-12 gap-12 items-center"
+      >
+        <div class="lg:col-span-7 space-y-6">
+          <div
+            class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-primary-light text-primary text-xs font-semibold"
+          >
+            <span class="w-2 h-2 rounded-full bg-secondary"></span>
+            Đồ án Phát triển Ứng dụng Thiết bị Di động • Nhóm Code is cheap
+          </div>
+
+          <h1
+            class="text-4xl sm:text-5xl font-extrabold tracking-tight text-ink leading-[1.15]"
+          >
+            Điều hành du lịch nhóm
+            <span class="text-primary">liền mạch</span> từ lịch trình đến chia
+            tiền.
+          </h1>
+
+          <p class="text-lg text-ink-muted leading-relaxed max-w-xl">
+            Giải quyết triệt để sự đứt gãy thông tin giữa
+            <strong>Lịch trình</strong>, <strong>Ngữ cảnh thực địa</strong> và
+            <strong>Quyết toán chi phí</strong> trong một ứng dụng duy nhất —
+            tối ưu cho thao tác nhanh dưới 10 giây khi đang di chuyển.
+          </p>
+
+          <div class="flex flex-wrap gap-3.5 pt-2">
+            <a
+              href="https://www.figma.com/design/CZABZnP40F3PHmhCYVFLZY/Figma-Design-TravelMate?node-id=1-199&t=uRCwIO466Zq3vyqT-1"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="inline-flex items-center justify-center gap-2 bg-primary hover:bg-primary-hover text-white font-semibold px-6 py-3.5 rounded-xl transition shadow-md shadow-primary/20"
+            >
+              Trải nghiệm Figma Prototype
+              <svg
+                class="w-4 h-4"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                stroke-width="2.2"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M13 7l5 5m0 0l-5 5m5-5H6"
+                />
+              </svg>
+            </a>
+            <a
+              href="#gallery"
+              class="inline-flex items-center justify-center gap-2 bg-white hover:bg-surface text-ink font-semibold px-6 py-3.5 rounded-xl border border-gray-200 transition"
+            >
+              Xem giao diện App
+            </a>
+          </div>
+
+          <div
+            class="grid grid-cols-3 gap-4 pt-4 max-w-md border-t border-gray-100"
+          >
+            <div>
+              <p class="text-2xl font-extrabold text-primary">&lt; 10s</p>
+              <p class="text-xs text-ink-muted">Ghi chi phí tại chỗ</p>
+            </div>
+            <div>
+              <p class="text-2xl font-extrabold text-secondary">-40%</p>
+              <p class="text-xs text-ink-muted">Số lần chuyển khoản</p>
+            </div>
+            <div>
+              <p class="text-2xl font-extrabold text-ink">100%</p>
+              <p class="text-xs text-ink-muted">Đồng bộ real-time</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- App Preview Mockup -->
+        <div class="lg:col-span-5 flex justify-center">
+          <div
+            class="relative w-[280px] sm:w-[300px] bg-ink rounded-[2.6rem] p-3 shadow-2xl border-4 border-gray-800"
+          >
+            <div
+              class="w-24 h-5 bg-ink rounded-b-2xl mx-auto absolute top-3 left-1/2 -translate-x-1/2 z-10"
+            ></div>
+            <div
+              class="bg-white rounded-[2rem] overflow-hidden aspect-[9/19.5]"
+            >
+              <!-- Thay đường dẫn ảnh màn hình Tổng quan chuyến đi vào đây -->
+              <img
+                src="./assets/trip-overview.png"
+                alt="Màn hình Tổng quan chuyến đi TravelMate"
+                class="w-full h-full object-cover"
+                onerror="
+                  this.src =
+                    'https://placehold.co/360x780/EAF2FF/006FFD?text=Trip+Overview%0A(assets/trip-overview.png)'
+                "
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2. PROBLEM & VALUE PROPOSITION -->
+    <section id="problem" class="py-20 bg-surface">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6">
+        <div class="text-center max-w-2xl mx-auto mb-14">
+          <span class="text-xs font-bold uppercase tracking-wider text-primary"
+            >Bài toán & Giá trị cốt lõi</span
+          >
+          <h2 class="text-3xl sm:text-4xl font-extrabold text-ink mt-2">
+            Chấm dứt cảnh chuyển qua lại giữa 3 ứng dụng rời rạc
+          </h2>
+          <p class="text-ink-muted mt-3">
+            Nhóm bạn 3–8 người đi chơi ngắn ngày thường bị đứt gãy thông tin khi
+            phải vừa xem tin nhắn, vừa mở bản đồ, vừa nhập bảng tính chia tiền.
+          </p>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-8">
+          <!-- Trước khi có TravelMate -->
+          <div class="bg-white p-7 rounded-2xl border border-red-100 shadow-sm">
+            <div
+              class="inline-flex items-center gap-2 text-sm font-bold text-[#ED3241] bg-[#FFE2E5] px-3 py-1 rounded-lg mb-5"
+            >
+              Cách tổ chức cũ: Chat + Maps + Splitwise
+            </div>
+            <ul class="space-y-4 text-sm text-ink-muted">
+              <li class="flex gap-3">
+                <span class="text-[#ED3241] font-bold">✕</span>
+                <span
+                  ><strong>Dữ liệu tách rời:</strong> Bàn bạc trên
+                  Zalo/Messenger rất dễ trôi tin nhắn, liên tục hỏi
+                  <em>"Giờ đi đâu tiếp?"</em>.</span
+                >
+              </li>
+              <li class="flex gap-3">
+                <span class="text-[#ED3241] font-bold">✕</span>
+                <span
+                  ><strong>Gõ lặp lại nhiều lần:</strong> Đã chốt trên chat, lại
+                  mở Maps tìm đường rồi mở app khác gõ lại tên quán để chia
+                  tiền.</span
+                >
+              </li>
+              <li class="flex gap-3">
+                <span class="text-[#ED3241] font-bold">✕</span>
+                <span
+                  ><strong>Ám ảnh đối chiếu nợ cuối chuyến:</strong> Ngại ghi
+                  bill tại chỗ dẫn đến quên khoản chi, mất hàng giờ tính nợ
+                  chéo.</span
+                >
+              </li>
+            </ul>
+          </div>
+
+          <!-- Với TravelMate -->
+          <div
+            class="bg-white p-7 rounded-2xl border-2 border-primary/20 shadow-sm relative"
+          >
+            <div
+              class="inline-flex items-center gap-2 text-sm font-bold text-primary bg-primary-light px-3 py-1 rounded-lg mb-5"
+            >
+              Với TravelMate: Chuỗi ngữ cảnh liền mạch
+            </div>
+            <ul class="space-y-4 text-sm text-ink">
+              <li class="flex gap-3">
+                <span class="text-secondary font-bold">✓</span>
+                <span
+                  ><strong>Một nguồn chân lý duy nhất:</strong> Cả nhóm cùng xem
+                  và cập nhật chung một lịch trình đồng bộ theo thời gian
+                  thực.</span
+                >
+              </li>
+              <li class="flex gap-3">
+                <span class="text-secondary font-bold">✓</span>
+                <span
+                  ><strong>Tự động liên kết ngữ cảnh:</strong> Lịch trình → Địa
+                  điểm → Chi phí → Người thụ hưởng tự động nối với nhau chỉ với
+                  1 chạm.</span
+                >
+              </li>
+              <li class="flex gap-3">
+                <span class="text-secondary font-bold">✓</span>
+                <span
+                  ><strong>Quyết toán tối ưu nợ:</strong> Thuật toán tự động bù
+                  trừ công nợ ròng, rút gọn tối đa số lần chuyển khoản cuối
+                  chuyến.</span
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. FEATURE HIGHLIGHTS (MVP) -->
+    <section id="features" class="py-20 bg-white">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6">
+        <div class="text-center max-w-2xl mx-auto mb-14">
+          <span
+            class="text-xs font-bold uppercase tracking-wider text-secondary"
+            >Tính năng MVP cốt lõi</span
+          >
+          <h2 class="text-3xl sm:text-4xl font-extrabold text-ink mt-2">
+            Quy trình vận hành 4 bước khép kín
+          </h2>
+        </div>
+
+        <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div
+            class="p-6 rounded-2xl bg-surface border border-gray-100 hover:border-primary/40 transition"
+          >
+            <div
+              class="w-11 h-11 rounded-xl bg-primary-light text-primary font-extrabold flex items-center justify-center mb-4"
+            >
+              01
+            </div>
+            <h3 class="text-lg font-bold text-ink mb-2">
+              Lập Lịch Trình Cộng Tác
+            </h3>
+            <p class="text-sm text-ink-muted leading-relaxed">
+              Cả nhóm cùng thêm, sắp xếp chặng đi theo ngày trên bảng thời gian
+              chung với cơ chế đồng bộ tức thì.
+            </p>
+          </div>
+
+          <div
+            class="p-6 rounded-2xl bg-surface border border-gray-100 hover:border-primary/40 transition"
+          >
+            <div
+              class="w-11 h-11 rounded-xl bg-primary-light text-primary font-extrabold flex items-center justify-center mb-4"
+            >
+              02
+            </div>
+            <h3 class="text-lg font-bold text-ink mb-2">
+              Dẫn Dắt Live Trip Mode
+            </h3>
+            <p class="text-sm text-ink-muted leading-relaxed">
+              Nhận diện thời gian & GPS để đẩy chặng kế tiếp (Next Activity) lên
+              đầu, tích hợp nút mở Google Maps 1 chạm.
+            </p>
+          </div>
+
+          <div
+            class="p-6 rounded-2xl bg-surface border border-gray-100 hover:border-primary/40 transition"
+          >
+            <div
+              class="w-11 h-11 rounded-xl bg-secondary/15 text-secondary font-extrabold flex items-center justify-center mb-4"
+            >
+              03
+            </div>
+            <h3 class="text-lg font-bold text-ink mb-2">Ghi Chi Phí Tại Chỗ</h3>
+            <p class="text-sm text-ink-muted leading-relaxed">
+              Nhập khoản chi dưới 10 giây, hỗ trợ chia đều hoặc tùy chỉnh từng
+              thành viên, lưu được ngay cả khi mất sóng 4G.
+            </p>
+          </div>
+
+          <div
+            class="p-6 rounded-2xl bg-surface border border-gray-100 hover:border-primary/40 transition"
+          >
+            <div
+              class="w-11 h-11 rounded-xl bg-secondary/15 text-secondary font-extrabold flex items-center justify-center mb-4"
+            >
+              04
+            </div>
+            <h3 class="text-lg font-bold text-ink mb-2">
+              Quyết Toán Tối Ưu Nợ
+            </h3>
+            <p class="text-sm text-ink-muted leading-relaxed">
+              Tự động bù trừ công nợ ròng (ví dụ gom 5 khoản chi còn 3 giao
+              dịch), giải quyết dứt điểm tiền nong dưới 3 phút.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. UI SCREEN GALLERY -->
+    <section id="gallery" class="py-20 bg-surface">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6">
+        <div class="text-center max-w-2xl mx-auto mb-14">
+          <span class="text-xs font-bold uppercase tracking-wider text-primary"
+            >UI Screen Gallery</span
+          >
+          <h2 class="text-3xl sm:text-4xl font-extrabold text-ink mt-2">
+            Giao diện tinh gọn, rõ ràng ngoài thực địa
+          </h2>
+          <p class="text-ink-muted mt-3">
+            Thiết kế tối giản trên nền sáng giúp dễ đọc dưới trời nắng và thao
+            tác nhanh bằng một tay.
+          </p>
+        </div>
+
+        <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
+          <!-- Màn hình 1 -->
+          <div class="flex flex-col items-center">
+            <div
+              class="w-full max-w-[240px] bg-ink rounded-[2rem] p-2.5 shadow-lg"
+            >
+              <div
+                class="bg-white rounded-[1.5rem] overflow-hidden aspect-[9/19.5]"
+              >
+                <img
+                  src="./assets/create-trip.png"
+                  alt="Tạo chuyến đi"
+                  class="w-full h-full object-cover"
+                  onerror="
+                    this.src =
+                      'https://placehold.co/320x690/EAF2FF/006FFD?text=Create+Trip%0A(assets/create-trip.png)'
+                  "
+                />
+              </div>
+            </div>
+            <h3 class="font-bold text-ink mt-4">Tạo chuyến đi</h3>
+            <p class="text-xs text-ink-muted text-center mt-1">
+              Thiết lập hành trình & mời bạn bè trong vài giây
+            </p>
+          </div>
+
+          <!-- Màn hình 2 -->
+          <div class="flex flex-col items-center">
+            <div
+              class="w-full max-w-[240px] bg-ink rounded-[2rem] p-2.5 shadow-lg"
+            >
+              <div
+                class="bg-white rounded-[1.5rem] overflow-hidden aspect-[9/19.5]"
+              >
+                <img
+                  src="./assets/group-fund.png"
+                  alt="Sổ quỹ nhóm"
+                  class="w-full h-full object-cover"
+                  onerror="
+                    this.src =
+                      'https://placehold.co/320x690/EAF2FF/006FFD?text=Group+Fund%0A(assets/group-fund.png)'
+                  "
+                />
+              </div>
+            </div>
+            <h3 class="font-bold text-ink mt-4">Sổ quỹ nhóm</h3>
+            <p class="text-xs text-ink-muted text-center mt-1">
+              Theo dõi tổng chi & lọc giao dịch theo danh mục
+            </p>
+          </div>
+
+          <!-- Màn hình 3 -->
+          <div class="flex flex-col items-center">
+            <div
+              class="w-full max-w-[240px] bg-ink rounded-[2rem] p-2.5 shadow-lg"
+            >
+              <div
+                class="bg-white rounded-[1.5rem] overflow-hidden aspect-[9/19.5]"
+              >
+                <img
+                  src="./assets/split-bill.png"
+                  alt="Chia tiền linh hoạt"
+                  class="w-full h-full object-cover"
+                  onerror="
+                    this.src =
+                      'https://placehold.co/320x690/EAF2FF/006FFD?text=Split+Bill%0A(assets/split-bill.png)'
+                  "
+                />
+              </div>
+            </div>
+            <h3 class="font-bold text-ink mt-4">Chia tiền linh hoạt</h3>
+            <p class="text-xs text-ink-muted text-center mt-1">
+              Chia đều hoặc tùy chỉnh, tự động cảnh báo lệch tiền
+            </p>
+          </div>
+
+          <!-- Màn hình 4 -->
+          <div class="flex flex-col items-center">
+            <div
+              class="w-full max-w-[240px] bg-ink rounded-[2rem] p-2.5 shadow-lg"
+            >
+              <div
+                class="bg-white rounded-[1.5rem] overflow-hidden aspect-[9/19.5]"
+              >
+                <img
+                  src="./assets/debt-settlement.png"
+                  alt="Quyết toán tối ưu nợ"
+                  class="w-full h-full object-cover"
+                  onerror="
+                    this.src =
+                      'https://placehold.co/320x690/EAF2FF/006FFD?text=Debt+Settlement%0A(assets/debt-settlement.png)'
+                  "
+                />
+              </div>
+            </div>
+            <h3 class="font-bold text-ink mt-4">Quyết toán tối ưu</h3>
+            <p class="text-xs text-ink-muted text-center mt-1">
+              Giảm 40% số lần chuyển khoản cuối chuyến
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. PROJECT LINKS (CTA) -->
+    <section id="links" class="py-20 bg-white">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6">
+        <div
+          class="bg-gradient-to-br from-primary to-[#0050B8] rounded-3xl p-8 sm:p-12 text-center text-white shadow-xl"
+        >
+          <h2 class="text-2xl sm:text-3xl font-extrabold">
+            Khám phá toàn bộ thiết kế & tài liệu TravelMate
+          </h2>
+          <p
+            class="text-primary-light/90 mt-3 max-w-xl mx-auto text-sm sm:text-base"
+          >
+            Trải nghiệm luồng tương tác thực tế trên Figma Prototype hoặc xem
+            chi tiết quy trình nghiên cứu UI/UX của nhóm trên Behance.
+          </p>
+
+          <div class="flex flex-wrap justify-center gap-4 mt-8">
+            <a
+              href="https://www.figma.com/design/CZABZnP40F3PHmhCYVFLZY/Figma-Design-TravelMate?node-id=1-199&t=uRCwIO466Zq3vyqT-1"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="inline-flex items-center gap-2 bg-white text-primary hover:bg-primary-light font-bold px-6 py-3.5 rounded-xl transition shadow-sm"
+            >
+              Mở Figma Prototype
+            </a>
+
+            <!-- Thay dấu # bằng link Behance Case Study khi task #14 hoàn thành -->
+            <a
+              href="https://www.behance.net/gallery/258699167/TravelMate"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="inline-flex items-center gap-2 bg-white/15 hover:bg-white/25 text-white border border-white/30 font-bold px-6 py-3.5 rounded-xl transition"
+            >
+              Xem Behance Case Study
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="border-t border-gray-100 py-8 bg-surface">
+      <div
+        class="max-w-6xl mx-auto px-4 sm:px-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-sm text-ink-muted"
+      >
+        <div class="font-semibold text-ink">
+          Travel<span class="text-primary">Mate</span> — Nhóm Code is cheap
+        </div>
+        <div>Môn học: Phát triển Ứng dụng Thiết bị Di động • 2026</div>
+      </div>
+    </footer>
+  </body>
+</html>
